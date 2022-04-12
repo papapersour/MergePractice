@@ -8,21 +8,21 @@ const gridLength = 200;
 //網頁載入完成後初始化動作
 $(function(){
     mapArray = [ //0-可走,1-障礙,2-終點,3-敵人
-    [0,1,1],
-    [0,0,0],
-    [3,1,2]
-    ];
-    ctx = $("#myCanvas")[0].getContext("2d");
-    imgMain = new Image();
-    imgMain.src = "spriteSheet.png";
-    currentImgMain = {
-    "x":0,
-    "y":0
-    };
-    imgMain.onload = function(){
-    ctx.drawImage(imgMain, 0,0,80,130,currentImgMain.x,currentImgMain.y,gridLength,gridLength);
-    }
-    imgMountain = new Image();
+[0,1,1],
+[0,0,0],
+[3,1,2]
+];
+ctx = $("#myCanvas")[0].getContext("2d");
+imgMain = new Image();
+imgMain.src = "spriteSheet.png";
+currentImgMain = {
+"x":0,
+"y":0
+};
+imgMain.onload = function(){
+ctx.drawImage(imgMain, 0,0,80,130,currentImgMain.x,currentImgMain.y,gridLength,gridLength);
+}
+imgMountain = new Image();
 imgMountain.src = "material.png";
 imgEnemy = new Image();
 imgEnemy.src = "Enemy.png";
@@ -39,7 +39,7 @@ ctx.drawImage(imgEnemy, 7,40,104,135,y*gridLength,x*gridLength,gridLength,gridLe
 }
 }
 }
-    });
+});
 //處理使用者按下按鍵
 $(document).on("keydown"
 ,function(event){
@@ -56,9 +56,9 @@ targetBlock = { //主角的目標(對應2維陣列)
 event.preventDefault();
 switch
 (event.code){
-    case
-    "ArrowLeft":
-    
+case
+"ArrowLeft"
+:
 targetImg.x
 = currentImgMain.x
 - gridLength
